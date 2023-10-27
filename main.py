@@ -1,32 +1,7 @@
-# print('test git repo')
-# print('Test line 2')
+print('test git repo')
+print('Test line 2')
 
-# CLASS ON 26TH OCTOBER 2023
 
-# x = int(input('Enter Number:'))
-# y = int(input('Enter Another Number:'))
-# Sum = x+y
-# Multi = x*y
-# print(Sum)
-# print(Multi)
-# print(Sum+Multi)
-
-# def addition(arg1,arg2):
-#     return arg1 + arg2
-# def multiplication(arg1,arg2):
-#     return arg1*arg2
-# x = int(input('Enter Number:'))
-# y = int(input('Enter Another Number:'))
-#
-# Sum = addition(x,y)
-# Multi = multiplication(x,y)
-# Result = addition(Sum,Multi)
-#
-# print(Sum)
-# print(Multi)
-# print(Result)
-
-#Code Re-Usability
 
 # x = 0 #global variable
 # y = 5000

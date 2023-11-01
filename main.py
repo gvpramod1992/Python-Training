@@ -5,9 +5,9 @@
 items = []
 #
 while True:
-    print('Available options: \n1. AddItem \n2. DeleteItem \n3. SearchItem \n4. DisplayItems \n5.Exit')
+    print('Available options: \n1. Add Item \n2. Delete Item \n3. Search Item \n4. Display Items \n5. Exit')
     option = int(input('Choose an option: '))
-    if option == 1: # AddItem
+    if option == 1: # Add Item
         item = input('Enter item name: ')
         # items.append(item)
         # write to a file
@@ -19,11 +19,21 @@ while True:
         fp = open('inventory.txt', 'a')
         fp.write(item + '\n')
         fp.close()
-    elif option == 2:
+    elif option == 2: # Delete Items
+        fp = open('inventory.txt', 'r')
+        x = input('Enter item name to Delete: ')
+        data = [items.remove(x) for item in fp.readlines()]
+        print(data)
+    # elif option == 3: # Search Items
+    #     fp = open('inventory.txt', 'r')
+    #     Search = input('Enter item name to Search: ')
+    #     data = [item.find(Search) for item in fp.readlines()]
+    #     print(data)
+    elif option == 4: # Display Items
         fp = open('inventory.txt', 'r')
         data = [item.rstrip('\n') for item in fp.readlines()]
         print(data)
-    elif option == 3:
+    elif option == 5: # Exit
         break
     else:
         print('Invalid option')

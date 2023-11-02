@@ -19,11 +19,11 @@ while True:
         fp = open('inventory.txt', 'a')
         fp.write(item + '\n')
         fp.close()
-    elif option == 2: # Delete Items
-        fp = open('inventory.txt', 'r')
-        x = input('Enter item name to Delete: ')
-        data = [items.remove(x) for item in fp.readlines()]
-        print(data)
+    # elif option == 2: # Delete Items
+    #     fp = open('inventory.txt', 'r')
+    #     x = input('Enter item name to Delete: ')
+    #     data = [items.remove(x) for item in fp.readlines()]
+    #     print(data)
     elif option == 3: # Search Items
         fp = open('inventory.txt', 'r')
         Y = input('Enter item name to Search: ')

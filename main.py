@@ -24,11 +24,11 @@ while True:
         x = input('Enter item name to Delete: ')
         data = [items.remove(x) for item in fp.readlines()]
         print(data)
-    # elif option == 3: # Search Items
-    #     fp = open('inventory.txt', 'r')
-    #     Search = input('Enter item name to Search: ')
-    #     data = [item.find(Search) for item in fp.readlines()]
-    #     print(data)
+    elif option == 3: # Search Items
+        fp = open('inventory.txt', 'r')
+        Y = input('Enter item name to Search: ')
+        data = [item.rfind(Y) for item in fp.readlines()]
+        print(data)
     elif option == 4: # Display Items
         fp = open('inventory.txt', 'r')
         data = [item.rstrip('\n') for item in fp.readlines()]

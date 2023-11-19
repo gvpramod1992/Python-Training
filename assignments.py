@@ -10,3 +10,4 @@
 #    'x' --> a.txt file exist return error, it will crate new file in write mode
 
 # tell , seek
+#help(print)

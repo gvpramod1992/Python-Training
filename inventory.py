@@ -1,3 +1,4 @@
+from datetime import datetime
 # write to a file
 # file name
 # location
@@ -13,10 +14,10 @@ def print_items():
 ####### addItem #########
 def addItem():
     item = input('Enter item : ')
-
+    quantity = input('Enter Quantity : ')
+    curr_date = datetime.strftime(datetime.now(), "%Y:%m:%d %H:%M:%S" )
     with open('inventory.txt', 'a') as fp:
-        fp.write(item + '\n')
-
+        fp.write(curr_date + " " + item + " " + quantity + '\n')
     print("Item added successfully")
 
 ####### deleteItem #########
@@ -44,10 +45,14 @@ def searchItem():
         data = fp.read()
 
     data = data.splitlines()
-    if item in data:
-        print("{} is available in the file".format(item))
-    else:
-        print(item + " not available in the file")
+    found = 0
+    for d_ele in data:
+        if item in d_ele:
+            print("{} is available in the file".format(item))
+            found = 1
+            break
+    if found == 0:
+        print("{} is NOT in the file".format(item))
 
 def displayItem():
     with open('inventory.txt', 'r') as fp:
@@ -71,3 +76,31 @@ def modifyItem():
             fp.write(str(data[item]) + "\n")
 
     print("Item {} modified successfully".format(old_item))
+
+def get_item_quantity(item):
+    with open('inventory.txt', 'r') as fp:
+        data = fp.readlines()
+        for d_item in data:
+            if item in d_item:
+                item_detail = d_item.split(" ")
+                if len(item_detail) == 4:
+                    return item_detail[-1]
+
+def get_total_qty():
+    total = 0
+    items = set()
+    with open('inventory.txt', 'r') as fp:
+        data = fp.readlines()
+        for d_item in data:
+            item = d_item.split(" ")[2]
+            items.add(item.strip('\n'))
+
+    for item in items:
+        qty=get_item_quantity(item)
+        if qty:
+            total += int(qty.strip('\n').strip('kg'))
+
+    print(total)
+
+
+

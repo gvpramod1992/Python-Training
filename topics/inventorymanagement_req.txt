@@ -1,0 +1,10 @@
+
+# Store in file
+# Add, delete,search, modify
+# date, quantity, each item
+# search based on date or item
+# get_item_quantity
+# total = sum of all items quantity ===> 43000kg
+    # get unique items
+
+
